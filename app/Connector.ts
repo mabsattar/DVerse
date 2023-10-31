@@ -32,3 +32,11 @@ const App: React.FC = () => {
 };
  
 export default App;
+
+enum WALLET {
+  METAMASK = "MetaMask",
+  WALLETCONNECT = "WalletConnect",
+  COINBASE = "Coinbase",
+  PARTICLE = "Particle"
+}
+
