@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
- 
 /** Import Dataverse Connector SDK and types */
-import {
-  DataverseConnector,
-  WALLET
-} from "@dataverse/dataverse-connector";
+import {  DataverseConnector } from "@dataverse/dataverse-connector";
  
 /**
  * Initialize the Dataverse Connector
  */
 const dataverseConnector: DataverseConnector = new DataverseConnector();
+
+enum WALLET {
+  METAMASK = "MetaMask",
+  WALLETCONNECT = "WalletConnect",
+  COINBASE = "Coinbase",
+  PARTICLE = "Particle"
+}
+
  
 const App: React.FC = () => {
   const [wallet, setWallet] = useState<WALLET>();
- 
-  const connectWallet = async () => {
+
+
+  const connectWallet = async (walletToUse?: WALLET) => {
     try {
       const res = await dataverseConnector.connectWallet();
       setWallet(res.wallet);
@@ -25,7 +30,7 @@ const App: React.FC = () => {
   };
  
   return (
-    <button onClick={connectWallet}>
+    <button onClick={() => connectWallet(WALLET.COINBASE)}>
       Connect Wallet
     </button>
   );
@@ -33,10 +38,5 @@ const App: React.FC = () => {
  
 export default App;
 
-enum WALLET {
-  METAMASK = "MetaMask",
-  WALLETCONNECT = "WalletConnect",
-  COINBASE = "Coinbase",
-  PARTICLE = "Particle"
-}
+
 
