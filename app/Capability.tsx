@@ -1,10 +1,11 @@
 import { DataverseConnector, SYSTEM_CALL, RESOURCE } from '@dataverse/dataverse-connector';
+import * as React from 'react';
 
 
 const dataverseConnector = new DataverseConnector;
 
 const appId = 
-const wallet = 
+const wallet = COINBASE;
  
 const createCapability = async () => {
   try {

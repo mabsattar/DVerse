@@ -1,6 +1,5 @@
 'use client';
 
-
 import React, { useState } from 'react';
 /** Import Dataverse Connector SDK and types */
 import {  DataverseConnector } from "@dataverse/dataverse-connector";
