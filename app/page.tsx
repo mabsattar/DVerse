@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Connector from './Connector.client.tsx';
+import Connector from './Connector'
 
 export default function Home() {
   return (
