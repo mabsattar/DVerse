@@ -1,0 +1,3 @@
+[submodule "dweb-toolkits"]
+	path = dweb-toolkits
+	url = https://github.com/dataverse-os/dweb-toolkits.git
