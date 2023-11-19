@@ -1,20 +1,20 @@
 import { DataverseConnector, SYSTEM_CALL, RESOURCE } from '@dataverse/dataverse-connector';
 import * as React from 'react';
+import config from '../dataverse.config';
+
 
 
 const dataverseConnector = new DataverseConnector;
 
-const appId = 
-const wallet = COINBASE;
+const appId = config.slug;
  
-const createCapability = async () => {
+const Capability = async () => {
   try {
     const pkh = await dataverseConnector.runOS({
       method: SYSTEM_CALL.createCapability,
       params: {
         appId,
-        resource: RESOURCE.CERAMIC,
-        wallet,
+        resource: RESOURCE.CERAMIC,        
       },
     });
     return pkh;
@@ -23,3 +23,4 @@ const createCapability = async () => {
   }
 };
 
+export default Capability;

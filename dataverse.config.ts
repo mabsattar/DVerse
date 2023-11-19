@@ -1,13 +1,12 @@
-import { config } from "@dataverse-os/dweb-toolkits";
 
-const config: config = {
+const config = {
 
-    slug: 'dvtest', // app id, need to match this regular: `^[a-zA-Z][a-zA-Z0-9_]*$`
+    slug: 'mv101', // app id, need to match this regular: `^[a-zA-Z][a-zA-Z0-9_]*$`
     name: 'myverse', // app name should NOT contain "-"
     logo: '',
     website: 'http://localhost:3000/', // you can use localhost:(port) for testing
     defaultFolderName: 'Untitled',
-    description: '',
+    description: 'This is a dataverse app build with nextjs',
     models: [
         {
             isPublicDomain: false, // default is false
