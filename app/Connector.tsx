@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState } from 'react';
 /** Import Dataverse Connector SDK and types */
 import {  DataverseConnector } from "@dataverse/dataverse-connector";
@@ -19,7 +17,7 @@ enum WALLET {
 
  
 const App: React.FC = () => {
-  const [wallet, setWallet] = useState<WALLET>();
+  const [WALLET, setWallet] = useState<WALLET>();
 
 
   const connectWallet = async (walletToUse?: WALLET) => {
@@ -33,7 +31,7 @@ const App: React.FC = () => {
   };
  
   return (
-    <button onClick={() => connectWallet(WALLET.COINBASE)}>
+    <button onClick={() => connectWallet(WALLET)}>
       Connect Wallet
     </button>
   );

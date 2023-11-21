@@ -1,14 +1,26 @@
 import { DataverseConnector, SYSTEM_CALL, RESOURCE } from '@dataverse/dataverse-connector';
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import config from '../dataverse.config';
 
-
-
-const dataverseConnector = new DataverseConnector;
-
 const appId = config.slug;
- 
-const Capability = async () => {
+
+const CapabilityComponent: React.FC = () => {
+  const [dataverseConnector, setDataverseConnector] = useState<DataverseConnector | null>(null);
+
+  useEffect(() => {
+    setDataverseConnector(new DataverseConnector());
+  }, []);
+
+  useEffect(() => {
+    if (dataverseConnector) {
+      Capability(dataverseConnector);
+    }
+  }, [dataverseConnector]);
+
+  return null; // or return some JSX if needed
+};
+
+const Capability = async (dataverseConnector: DataverseConnector) => {
   try {
     const pkh = await dataverseConnector.runOS({
       method: SYSTEM_CALL.createCapability,
@@ -23,4 +35,4 @@ const Capability = async () => {
   }
 };
 
-export default Capability;
+export default CapabilityComponent;
