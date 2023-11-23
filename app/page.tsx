@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import Connector from './Connector'
 import React from 'react'
-import Capability from './Capability'
+import CapabilityComponent from './Capability'
 
 
 export default function Home() {
   return (
     <div>
       <Connector />
-      <Capability />
+      <CapabilityComponent />
     
     </div>
   )

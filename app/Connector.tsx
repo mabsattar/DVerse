@@ -1,7 +1,10 @@
+"use client";
+
+
 import React, { useState } from 'react';
 /** Import Dataverse Connector SDK and types */
 import {  DataverseConnector } from "@dataverse/dataverse-connector";
- 
+import CapabilityComponent from './Capability';
 
 /**
  * Initialize the Dataverse Connector
@@ -15,15 +18,16 @@ enum WALLET {
   PARTICLE = "Particle"
 }
 
+
  
 const App: React.FC = () => {
-  const [WALLET, setWallet] = useState<WALLET>();
+  const [WALLET, setWALLET] = useState<WALLET>();
 
 
   const connectWallet = async (walletToUse?: WALLET) => {
     try {
       const res = await dataverseConnector.connectWallet();
-      setWallet(res.wallet);
+      setWALLET(res.wallet);
       return(res.address);
     } catch (error) {
       console.error(error);
