@@ -21,13 +21,13 @@ enum WALLET {
 
  
 const App: React.FC = () => {
-  const [WALLET, setWALLET] = useState<WALLET>();
+  const [WALLET, setWallet] = useState<WALLET>();
 
 
   const connectWallet = async (walletToUse?: WALLET) => {
     try {
       const res = await dataverseConnector.connectWallet();
-      setWALLET(res.wallet);
+      setWallet(res.wallet);
       return(res.address);
     } catch (error) {
       console.error(error);
