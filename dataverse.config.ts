@@ -5,7 +5,7 @@ const config = {
     name: 'myverse', // app name should NOT contain "-"
     logo: '',
     website: 'http://localhost:3000/', // you can use localhost:(port) for testing
-    defaultFolderName: 'Untitled',
+    defaultFolderName: 'dvdata',
     description: 'This is a dataverse app build with nextjs',
     models: [
         {
