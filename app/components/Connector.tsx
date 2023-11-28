@@ -15,8 +15,13 @@ function Connector() {
   const [data, setData] = useState(null);
   const [wallet, setWallet] = useState(null);
 
+  const handleOnClick = () =>{    
+    setWallet("Connected")
 
-const connectWallet = async (walletToUse?: WALLET) => {
+  }
+
+
+/*const connectWallet = async (walletToUse?: WALLET) => {
   try {
     const res = await dataverseConnector.connectWallet();
     setWallet(res.wallet);
@@ -24,7 +29,7 @@ const connectWallet = async (walletToUse?: WALLET) => {
   } catch (error) {
     console.error(error);
   }
-};
+};*/
 
 
 useEffect(() => {
@@ -47,11 +52,13 @@ useEffect(() => {
 }, [wallet]);
  
   return (
-    <button onClick={() => connectWallet(WALLET)}>
-      Connect Wallet
-    </button>
-  );
-};
+    <div className="flex justify-items-end p-4">
+      <button onClick={handleOnClick}>
+        Connect Wallet
+      </button>
+    </div>
+  )
+}
  
 export default Connector;
 

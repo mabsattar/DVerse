@@ -3,7 +3,7 @@
 
 import { DataverseConnector, SYSTEM_CALL, RESOURCE } from '@dataverse/dataverse-connector';
 import React, { useEffect, useState } from 'react';
-import config from '../dataverse.config';
+import config from '../../dataverse.config';
 
 
 const appId = config.slug;
