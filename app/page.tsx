@@ -4,6 +4,7 @@ import React from 'react';
 import CapabilityComponent from './components/Capability'
 import {Extension, DataverseConnector} from "@dataverse/dataverse-connector"
 import Navbar from "./components/Navbar";
+import Blogform from './components/Blogform';
 
 /*interface Context {
   dataverseConnector: DataverseConnector;
@@ -19,6 +20,7 @@ export default function Home() {
       <Connector />
       <CapabilityComponent />
       <Navbar />    
+      <Blogform heading="Start writing Blogs & Articles from here .." />
     
     </div>
   )

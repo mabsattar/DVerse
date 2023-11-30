@@ -51,7 +51,7 @@ useEffect(() => {
 }, [wallet]); */
  
   return (
-    <div className="flex justify-end p-4">
+    <div className="container flex justify-end p-4">
       <button onClick={handleOnClick}>
         Connect Wallet
       </button>
